@@ -8,7 +8,9 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 app.use(cors());
-
+app.get('/', (req, res)=>{
+  res.send("Hello")
+})
 
 io.on('connection', (socket) => {
   console.log('a user connected');
